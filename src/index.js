@@ -5,7 +5,7 @@ import App from './App';
 import './index.css';
 //import reportWebVitals from './reportWebVitals';
 
-/*ReactDOM.render(
+ReactDOM.render(
   <App/>,
   document.getElementById('root')
 )
@@ -13,7 +13,7 @@ import './index.css';
 
 
 
-/*function formatDate(date) {
+function formatDate(date) {
   return date.toLocaleDateString();
 }
 
@@ -52,7 +52,7 @@ ReactDOM.render(
   author={comment.author}
   />,
   document.getElementById('root')
-);*/
+);
 
 
 

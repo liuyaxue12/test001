@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-/*class LoginControl extends React.Component{
+class LoginControl extends React.Component{
   constructor(props){
     super(props);
     this.handleLoginClick=this.handleLoginClick.bind(this);
@@ -58,5 +58,6 @@ function LogoutButton(props){
     </button>
   );
 }
+//githubのアップロード練習！！
 
-export default LoginControl;*/
+export default LoginControl;
