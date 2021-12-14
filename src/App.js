@@ -1,63 +1,48 @@
-import React from 'react';
+import { render } from "@testing-library/react";
+import React, {useState, useEffect} from "react";
+import { Component } from "react";
+import ReactDOM from 'react-dom';
+import {BrowserRouter as Router,Routes,Route,Link}from 'react-router-dom';
+import Navbar from './components/Navbar'
+import About from "./components/About";
+import Home from "./components/Home";
 
+// function App(){
+//   return(
+//     <div>
+//       <BasicExample />
 
-class LoginControl extends React.Component{
-  constructor(props){
-    super(props);
-    this.handleLoginClick=this.handleLoginClick.bind(this);
-    this.handleLogoutClick=this.handleLogoutClick.bind(this);
-    this.state={isLoggedIn:false};
-  }
-  handleLoginClick(){
-  this.setState({isLoggedIn:true});
-  }
-  handleLogoutClick(){
-    this.setState({isLoggedIn:false});
-    }
+//     </div>
+//   )
+// }
+
+class App extends React.Component{
   render(){
-    const isLoggedIn=this.state.isLoggedIn;
-    let button;
-
-    if(isLoggedIn){
-      button=<LogoutButton onClick={this.handleLogoutClick} />;
-    }else{
-      button=<LoginButton onClick={this.handleLoginClick} />;
-    }
     return(
-      <div>
-        <Greeting isLoggedIn={isLoggedIn}/>
-        {button} 
-      </div>
-    );
-  }
-}
-function UserGreeting(props){
-  return <h1>Welcome back!</h1>;
-}
-function GuestGreeting(props){
-  return <h1>Please sign up!</h1>;
-}
-function Greeting(props){
-  const isLoggedIn=props.isLoggedIn;
-  if(isLoggedIn){
-    return <UserGreeting />;
-  }
-    return <GuestGreeting />;
-}
-function LoginButton(props){
-  return (
-    <button onClick={props.onClick}>
-      login 
-    </button>
-  );
-}
-function LogoutButton(props){
-  return (
-    <button onClick={props.onClick}>
-      logout  
-    </button>
-  );
-}
-//githubのアップロード練習！！
+      <div className="App">
+      <Router>
+        <Navbar />
 
-export default LoginControl;
+      <Routes>
+      
+        <Route path="/" element={<Home />}></Route>
+          
+        <Route path="/about" element={<About />}></Route>
+        
+          </Routes>
+
+          </Router> 
+
+      </div>
+    )
+  }
+}
+
+
+
+export default App;
+
+
+
+
+
